@@ -1,0 +1,59 @@
+{
+  "name": "aurora-migrate",
+  "description": "Helper CLI to run db-migrate using cloudformation stacks",
+  "version": "0.0.0",
+  "author": "Ben Force",
+  "bin": {
+    "aurora-migrate": "./bin/run"
+  },
+  "bugs": "https://github.com/drg-adaptive/aurora-migrate/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "cli-ux": "^5.3.1",
+    "inquirer": "^6.5.0",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/tslint": "^3",
+    "@types/inquirer": "^6.5.0",
+    "@types/node": "^10",
+    "globby": "^10",
+    "ts-node": "^8",
+    "tslint": "^5",
+    "typescript": "^3.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/drg-adaptive/aurora-migrate",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "aurora-migrate",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "drg-adaptive/aurora-migrate",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "tslint -p . -t stylish",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}

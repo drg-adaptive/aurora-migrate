@@ -1,0 +1,1 @@
+{"version":"0.0.0","commands":{"setup":{"id":"setup","description":"Generate a basic database.json that will connect to aurora","pluginName":"aurora-migrate","pluginType":"core","aliases":[],"flags":{"file":{"name":"file","type":"option","default":"database.json"}},"args":[]}}}
