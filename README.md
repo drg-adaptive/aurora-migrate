@@ -57,7 +57,8 @@ USAGE
   $ aurora-migrate setup
 
 OPTIONS
-  --file=file  [default: database.json]
+  -e, --environment=environment  [default: prod] The name of the environment to create.
+  --file=file                    [default: database.json] Where the config will be saved.
 ```
 
 _See code: [src/commands/setup.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.0.0/src/commands/setup.ts)_
