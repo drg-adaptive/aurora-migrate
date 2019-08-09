@@ -43,6 +43,7 @@ export default class EnableDataApi extends BaseCommand {
       {
         title: "Enable data api",
         task: (ctx: IFlagsContext) =>
+          // @ts-ignore
           new Observable(async (observer: SubscriptionObserver<T>) => {
             if (!ctx.outputs) return;
 
