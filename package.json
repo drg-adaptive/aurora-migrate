@@ -16,7 +16,8 @@
     "execa": "^2.0.3",
     "inquirer": "^6.5.0",
     "listr": "^0.14.3",
-    "tslib": "^1"
+    "tslib": "^1",
+    "zen-observable": "^0.8.14"
   },
   "peerDependencies": {
     "db-migrate": "^0.11.6",
@@ -30,6 +31,7 @@
     "@types/inquirer": "^6.5.0",
     "@types/listr": "^0.14.2",
     "@types/node": "^10",
+    "@types/zen-observable": "^0.8.0",
     "globby": "^10",
     "ts-node": "^8",
     "tslint": "^5",

@@ -2,13 +2,16 @@ import { Command, flags } from "@oclif/command";
 import * as AWS from "aws-sdk";
 import * as Listr from "listr";
 
-interface ITaskContext {
+export interface IFlagsContext {
   flags: {
     stack: string;
     region: string;
     database?: string;
     schema?: string;
   };
+  outputs?: Array<AWS.CloudFormation.Output>;
+}
+interface ITaskContext extends IFlagsContext {
   outputs: Array<AWS.CloudFormation.Output>;
   secretName: string;
   resourceName: string;
@@ -19,7 +22,7 @@ interface ITaskContext {
 }
 
 async function getStackOutput(
-  ctx: ITaskContext
+  ctx: IFlagsContext
 ): Promise<Array<AWS.CloudFormation.Output>> {
   const cloudformation = new AWS.CloudFormation({
     apiVersion: "2010-05-15",
@@ -48,13 +51,18 @@ async function getStackOutput(
   );
 }
 
+export async function getStackDescription(
+  ctx: IFlagsContext
+): Promise<AWS.CloudFormation.Output[]> {
+  ctx.outputs = await getStackOutput(ctx);
+  return ctx.outputs;
+}
+
 const getCloudFormationParams = new Listr<ITaskContext>(
   [
     {
       title: `Get stack description`,
-      async task(ctx: ITaskContext) {
-        ctx.outputs = await getStackOutput(ctx);
-      }
+      task: getStackDescription
     },
     {
       title: `Get outputs`,

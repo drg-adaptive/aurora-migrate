@@ -11,7 +11,13 @@ export default class Run extends BaseCommand {
     ...BaseCommand.getStandardFlags()
   };
 
-  static args = [{ name: "command" }];
+  static args = [
+    {
+      name: "command",
+      description: "The command that will be passed on to db-migrate",
+      example: "up"
+    }
+  ];
 
   async run() {
     const { args, flags } = this.parse(Run);

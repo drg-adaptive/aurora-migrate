@@ -29,9 +29,26 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`aurora-migrate enable-data-api [FILE]`](#aurora-migrate-enable-data-api-file)
 * [`aurora-migrate help [COMMAND]`](#aurora-migrate-help-command)
 * [`aurora-migrate run [COMMAND]`](#aurora-migrate-run-command)
 * [`aurora-migrate setup`](#aurora-migrate-setup)
+
+## `aurora-migrate enable-data-api [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ aurora-migrate enable-data-api [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/enable-data-api.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.1/src/commands/enable-data-api.ts)_
 
 ## `aurora-migrate help [COMMAND]`
 
@@ -57,6 +74,9 @@ Executes a db-migrate command
 ```
 USAGE
   $ aurora-migrate run [COMMAND]
+
+ARGUMENTS
+  COMMAND  The command that will be passed on to db-migrate
 
 OPTIONS
   -h, --help           show CLI help
