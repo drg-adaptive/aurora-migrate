@@ -23,10 +23,16 @@ export default class Run extends BaseCommand {
     const { args, flags } = this.parse(Run);
     const envResult = await this.getEnvironmentVariables(flags);
 
-    const { stdout } = await execa("npx", ["db-migrate", args.command], {
-      env: envResult.env,
-      shell: true
-    });
+    const { stdout } = await execa(
+      "node",
+      ["./node_modules/.bin/db-migrate", args.command],
+      {
+        env: envResult.env,
+        shell: true,
+        cwd: process.cwd(),
+        stdio: "inherit"
+      }
+    );
 
     console.info(stdout);
   }
