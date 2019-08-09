@@ -11,14 +11,24 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "aws-sdk": "^2.505.0",
     "cli-ux": "^5.3.1",
+    "execa": "^2.0.3",
     "inquirer": "^6.5.0",
+    "listr": "^0.14.3",
     "tslib": "^1"
+  },
+  "peerDependencies": {
+    "db-migrate": "^0.11.6",
+    "db-migrate-aurora": "^1.0.5"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
     "@oclif/tslint": "^3",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/execa": "^2.0.0",
     "@types/inquirer": "^6.5.0",
+    "@types/listr": "^0.14.2",
     "@types/node": "^10",
     "globby": "^10",
     "ts-node": "^8",
@@ -53,7 +63,8 @@
     "posttest": "tslint -p . -t stylish",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "build": "echo \"Everything will be bulit during publishing...\""
   },
   "types": "lib/index.d.ts"
 }

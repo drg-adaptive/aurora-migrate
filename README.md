@@ -5,6 +5,7 @@ Helper CLI to run db-migrate using cloudformation stacks
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/aurora-migrate.svg)](https://npmjs.org/package/aurora-migrate)
+[![Maintainability](https://api.codeclimate.com/v1/badges/59cee2af627f803aa839/maintainability)](https://codeclimate.com/github/drg-adaptive/aurora-migrate/maintainability)
 [![Downloads/week](https://img.shields.io/npm/dw/aurora-migrate.svg)](https://npmjs.org/package/aurora-migrate)
 [![License](https://img.shields.io/npm/l/aurora-migrate.svg)](https://github.com/drg-adaptive/aurora-migrate/blob/master/package.json)
 
@@ -28,8 +29,12 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`aurora-migrate help [COMMAND]`](#aurora-migrate-help-command)
-* [`aurora-migrate setup`](#aurora-migrate-setup)
+- [aurora-migrate](#aurora-migrate)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`aurora-migrate help [COMMAND]`](#aurora-migrate-help-command)
+  - [`aurora-migrate run [COMMAND]`](#aurora-migrate-run-command)
+  - [`aurora-migrate setup`](#aurora-migrate-setup)
 
 ## `aurora-migrate help [COMMAND]`
 
@@ -47,6 +52,24 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.0/src/commands/help.ts)_
+
+## `aurora-migrate run [COMMAND]`
+
+Executes a db-migrate command
+
+```
+USAGE
+  $ aurora-migrate run [COMMAND]
+
+OPTIONS
+  -h, --help           show CLI help
+  -s, --stack=stack    (required) Name of the CloudFormation stack to reference
+  --region=region      (required) [default: us-east-1] The aws region to connect to
+  --resource=resource  (required) Name of the stack output containing an ARN of the Aurora cluster
+  --secret=secret      (required) Name of the stack output containing an ARN of the secret store with RDS information
+```
+
+_See code: [src/commands/run.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.0.0/src/commands/run.ts)_
 
 ## `aurora-migrate setup`
 
