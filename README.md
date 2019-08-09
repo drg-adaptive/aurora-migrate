@@ -3,6 +3,7 @@ aurora-migrate
 
 Helper CLI to run db-migrate using cloudformation stacks
 
+[![Build Status](https://travis-ci.com/drg-adaptive/aurora-migrate.svg?branch=master)](https://travis-ci.com/drg-adaptive/aurora-migrate)
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/aurora-migrate.svg)](https://npmjs.org/package/aurora-migrate)
 [![Maintainability](https://api.codeclimate.com/v1/badges/59cee2af627f803aa839/maintainability)](https://codeclimate.com/github/drg-adaptive/aurora-migrate/maintainability)
@@ -29,10 +30,13 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`aurora-migrate enable-data-api`](#aurora-migrate-enable-data-api)
-* [`aurora-migrate help [COMMAND]`](#aurora-migrate-help-command)
-* [`aurora-migrate run [COMMAND]`](#aurora-migrate-run-command)
-* [`aurora-migrate setup`](#aurora-migrate-setup)
+- [aurora-migrate](#aurora-migrate)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`aurora-migrate enable-data-api`](#aurora-migrate-enable-data-api)
+  - [`aurora-migrate help [COMMAND]`](#aurora-migrate-help-command)
+  - [`aurora-migrate run [COMMAND]`](#aurora-migrate-run-command)
+  - [`aurora-migrate setup`](#aurora-migrate-setup)
 
 ## `aurora-migrate enable-data-api`
 
