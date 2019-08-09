@@ -20,7 +20,7 @@ $ npm install -g aurora-migrate
 $ aurora-migrate COMMAND
 running command...
 $ aurora-migrate (-v|--version|version)
-aurora-migrate/0.0.0 darwin-x64 node-v10.16.0
+aurora-migrate/0.1.0 darwin-x64 node-v10.16.0
 $ aurora-migrate --help [COMMAND]
 USAGE
   $ aurora-migrate COMMAND
@@ -29,12 +29,9 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-- [aurora-migrate](#aurora-migrate)
-- [Usage](#usage)
-- [Commands](#commands)
-  - [`aurora-migrate help [COMMAND]`](#aurora-migrate-help-command)
-  - [`aurora-migrate run [COMMAND]`](#aurora-migrate-run-command)
-  - [`aurora-migrate setup`](#aurora-migrate-setup)
+* [`aurora-migrate help [COMMAND]`](#aurora-migrate-help-command)
+* [`aurora-migrate run [COMMAND]`](#aurora-migrate-run-command)
+* [`aurora-migrate setup`](#aurora-migrate-setup)
 
 ## `aurora-migrate help [COMMAND]`
 
@@ -64,12 +61,14 @@ USAGE
 OPTIONS
   -h, --help           show CLI help
   -s, --stack=stack    (required) Name of the CloudFormation stack to reference
+  --database=database  Database in the cluster to connect to
   --region=region      (required) [default: us-east-1] The aws region to connect to
   --resource=resource  (required) Name of the stack output containing an ARN of the Aurora cluster
+  --schema=schema      Schema in the database to run operations on
   --secret=secret      (required) Name of the stack output containing an ARN of the secret store with RDS information
 ```
 
-_See code: [src/commands/run.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.0.0/src/commands/run.ts)_
+_See code: [src/commands/run.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.0/src/commands/run.ts)_
 
 ## `aurora-migrate setup`
 
@@ -84,5 +83,5 @@ OPTIONS
   --file=file                    [default: database.json] Where the config will be saved.
 ```
 
-_See code: [src/commands/setup.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.0.0/src/commands/setup.ts)_
+_See code: [src/commands/setup.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.0/src/commands/setup.ts)_
 <!-- commandsstop -->
