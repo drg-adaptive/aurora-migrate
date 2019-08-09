@@ -64,7 +64,8 @@
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md",
-    "build": "echo \"Everything will be bulit during publishing...\""
+    "build": "echo \"Everything will be bulit during publishing...\"",
+    "postversion": "git push --follow-tags"
   },
   "types": "lib/index.d.ts"
 }
