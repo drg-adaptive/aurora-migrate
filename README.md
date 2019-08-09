@@ -30,13 +30,10 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-- [aurora-migrate](#aurora-migrate)
-- [Usage](#usage)
-- [Commands](#commands)
-  - [`aurora-migrate enable-data-api`](#aurora-migrate-enable-data-api)
-  - [`aurora-migrate help [COMMAND]`](#aurora-migrate-help-command)
-  - [`aurora-migrate run [COMMAND]`](#aurora-migrate-run-command)
-  - [`aurora-migrate setup`](#aurora-migrate-setup)
+* [`aurora-migrate enable-data-api`](#aurora-migrate-enable-data-api)
+* [`aurora-migrate help [COMMAND]`](#aurora-migrate-help-command)
+* [`aurora-migrate run [COMMAND]`](#aurora-migrate-run-command)
+* [`aurora-migrate setup`](#aurora-migrate-setup)
 
 ## `aurora-migrate enable-data-api`
 
