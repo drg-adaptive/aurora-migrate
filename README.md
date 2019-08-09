@@ -20,7 +20,7 @@ $ npm install -g aurora-migrate
 $ aurora-migrate COMMAND
 running command...
 $ aurora-migrate (-v|--version|version)
-aurora-migrate/0.1.1 darwin-x64 node-v10.16.0
+aurora-migrate/0.1.2 darwin-x64 node-v10.16.0
 $ aurora-migrate --help [COMMAND]
 USAGE
   $ aurora-migrate COMMAND
@@ -29,26 +29,27 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`aurora-migrate enable-data-api [FILE]`](#aurora-migrate-enable-data-api-file)
+* [`aurora-migrate enable-data-api`](#aurora-migrate-enable-data-api)
 * [`aurora-migrate help [COMMAND]`](#aurora-migrate-help-command)
 * [`aurora-migrate run [COMMAND]`](#aurora-migrate-run-command)
 * [`aurora-migrate setup`](#aurora-migrate-setup)
 
-## `aurora-migrate enable-data-api [FILE]`
+## `aurora-migrate enable-data-api`
 
 describe the command here
 
 ```
 USAGE
-  $ aurora-migrate enable-data-api [FILE]
+  $ aurora-migrate enable-data-api
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help           show CLI help
+  -s, --stack=stack    (required) Name of the CloudFormation stack to reference
+  --region=region      (required) [default: us-east-1] The aws region to connect to
+  --resource=resource  (required) Name of the stack output containing an ARN of the Aurora cluster
 ```
 
-_See code: [src/commands/enable-data-api.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.1/src/commands/enable-data-api.ts)_
+_See code: [src/commands/enable-data-api.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.2/src/commands/enable-data-api.ts)_
 
 ## `aurora-migrate help [COMMAND]`
 
@@ -88,7 +89,7 @@ OPTIONS
   --secret=secret      (required) Name of the stack output containing an ARN of the secret store with RDS information
 ```
 
-_See code: [src/commands/run.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.1/src/commands/run.ts)_
+_See code: [src/commands/run.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.2/src/commands/run.ts)_
 
 ## `aurora-migrate setup`
 
@@ -103,5 +104,5 @@ OPTIONS
   --file=file                    [default: database.json] Where the config will be saved.
 ```
 
-_See code: [src/commands/setup.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.1/src/commands/setup.ts)_
+_See code: [src/commands/setup.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.2/src/commands/setup.ts)_
 <!-- commandsstop -->
