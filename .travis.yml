@@ -18,7 +18,7 @@ jobs:
         skip_cleanup: true
         tag: next
     - stage: npm latest release
-      if: branch = master AND tag IS present
+      if: tag IS present
       node_js: stable
       script: yarn build
       deploy:
