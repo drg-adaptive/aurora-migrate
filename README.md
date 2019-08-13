@@ -30,10 +30,31 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`aurora-migrate create-env [FILE]`](#aurora-migrate-create-env-file)
 * [`aurora-migrate enable-data-api`](#aurora-migrate-enable-data-api)
 * [`aurora-migrate help [COMMAND]`](#aurora-migrate-help-command)
 * [`aurora-migrate run [COMMAND]`](#aurora-migrate-run-command)
 * [`aurora-migrate setup`](#aurora-migrate-setup)
+
+## `aurora-migrate create-env [FILE]`
+
+Create a .env file in the current directory
+
+```
+USAGE
+  $ aurora-migrate create-env [FILE]
+
+OPTIONS
+  -h, --help           show CLI help
+  -s, --stack=stack    (required) Name of the CloudFormation stack to reference
+  --database=database  Database in the cluster to connect to
+  --region=region      (required) [default: us-east-1] The aws region to connect to
+  --resource=resource  (required) Name of the stack output containing an ARN of the Aurora cluster
+  --schema=schema      Schema in the database to run operations on
+  --secret=secret      (required) Name of the stack output containing an ARN of the secret store with RDS information
+```
+
+_See code: [src/commands/create-env.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.8/src/commands/create-env.ts)_
 
 ## `aurora-migrate enable-data-api`
 
