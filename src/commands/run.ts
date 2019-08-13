@@ -23,7 +23,7 @@ export default class Run extends BaseCommand {
     const { args, flags } = this.parse(Run);
     const envResult = await this.getEnvironmentVariables(flags);
 
-    const { stdout } = await execa(
+    const { stdout, stderr, exitCode } = await execa(
       "node",
       ["./node_modules/.bin/db-migrate", args.command],
       {
@@ -34,6 +34,10 @@ export default class Run extends BaseCommand {
       }
     );
 
-    console.info(stdout);
+    if (exitCode !== 0) {
+      this.error(new Error(stderr), { exit: 1 });
+    }
+
+    this.log(stdout);
   }
 }
