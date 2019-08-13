@@ -3,6 +3,29 @@ import * as execa from "execa";
 
 import BaseCommand from "../base-command";
 
+function updateOutput(
+  ctx: { output: string },
+  result: { exitCode: number; stdout: string; stderr: string },
+  label?: string
+) {
+  if (result.exitCode !== 0) {
+    throw new Error(result.stderr);
+  }
+
+  const prefix = `${label ? `[${label}] ` : ""}`;
+  let lines = "";
+
+  if (result && result.stdout) {
+    lines =
+      result.stdout
+        .split("\n")
+        .map(line => `${prefix}${line}`)
+        .join("\n") + "\n";
+  }
+
+  ctx.output += lines;
+}
+
 export default class Run extends BaseCommand {
   static description = "Executes a db-migrate command";
 
@@ -22,22 +45,20 @@ export default class Run extends BaseCommand {
   async run() {
     const { args, flags } = this.parse(Run);
     const envResult = await this.getEnvironmentVariables(flags);
+    const ctx = { output: "" };
 
-    const { stdout, stderr, exitCode } = await execa(
-      "node",
-      ["./node_modules/.bin/db-migrate", args.command],
-      {
-        env: envResult.env,
-        shell: true,
-        cwd: process.cwd(),
-        stdio: "inherit"
-      }
-    );
+    this.log("Starting migration");
 
-    if (exitCode !== 0) {
-      this.error(new Error(stderr), { exit: 1 });
-    }
+    await execa("./node_modules/.bin/db-migrate", args.command.split(" "), {
+      env: envResult.env,
+      shell: false,
+      cwd: process.cwd()
+    })
+      .then(result => updateOutput(ctx, result, "db-migrate"))
+      .catch(err => {
+        throw err;
+      });
 
-    this.log(stdout);
+    this.log(ctx.output);
   }
 }
