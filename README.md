@@ -21,7 +21,7 @@ $ npm install -g aurora-migrate
 $ aurora-migrate COMMAND
 running command...
 $ aurora-migrate (-v|--version|version)
-aurora-migrate/0.1.9 darwin-x64 node-v10.16.0
+aurora-migrate/0.1.10 darwin-x64 node-v10.16.0
 $ aurora-migrate --help [COMMAND]
 USAGE
   $ aurora-migrate COMMAND
@@ -54,7 +54,7 @@ OPTIONS
   --secret=secret      (required) Name of the stack output containing an ARN of the secret store with RDS information
 ```
 
-_See code: [src/commands/create-env.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.9/src/commands/create-env.ts)_
+_See code: [src/commands/create-env.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.10/src/commands/create-env.ts)_
 
 ## `aurora-migrate enable-data-api`
 
@@ -71,7 +71,7 @@ OPTIONS
   --resource=resource  (required) Name of the stack output containing an ARN of the Aurora cluster
 ```
 
-_See code: [src/commands/enable-data-api.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.9/src/commands/enable-data-api.ts)_
+_See code: [src/commands/enable-data-api.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.10/src/commands/enable-data-api.ts)_
 
 ## `aurora-migrate help [COMMAND]`
 
@@ -111,7 +111,7 @@ OPTIONS
   --secret=secret      (required) Name of the stack output containing an ARN of the secret store with RDS information
 ```
 
-_See code: [src/commands/run.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.9/src/commands/run.ts)_
+_See code: [src/commands/run.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.10/src/commands/run.ts)_
 
 ## `aurora-migrate setup`
 
@@ -126,5 +126,5 @@ OPTIONS
   --file=file                    [default: database.json] Where the config will be saved.
 ```
 
-_See code: [src/commands/setup.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.9/src/commands/setup.ts)_
+_See code: [src/commands/setup.ts](https://github.com/drg-adaptive/aurora-migrate/blob/v0.1.10/src/commands/setup.ts)_
 <!-- commandsstop -->
