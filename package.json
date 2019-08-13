@@ -1,7 +1,7 @@
 {
   "name": "aurora-migrate",
   "description": "Helper CLI to run db-migrate using cloudformation stacks",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": "Ben Force",
   "bin": {
     "aurora-migrate": "./bin/run"
